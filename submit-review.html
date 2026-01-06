@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit Your Review - Campus Project Hub">
+    <title>Submit Review - Campus Project Hub</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Campus Project Hub 🤍</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="submit-review.html" class="active">Submit Review</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Submit Review Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Submit Your Review</h1>
+            <p>Share your experience with Campus Project Hub</p>
+        </div>
+    </section>
+
+    <!-- Submit Review Section -->
+    <section class="submit-review-section">
+        <div class="container">
+            <div class="review-form-container">
+                <div class="form-intro">
+                    <h2>We'd Love to Hear From You! ⭐</h2>
+                    <p>Your feedback helps us improve and helps other students make informed decisions. Please share your honest experience with our services.</p>
+                </div>
+
+                <form class="review-form" id="reviewForm">
+                    <div class="form-group">
+                        <label for="reviewName">Your Name *</label>
+                        <input type="text" id="reviewName" name="reviewName" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reviewCourse">Course *</label>
+                            <select id="reviewCourse" name="reviewCourse" required>
+                                <option value="">Select your course</option>
+                                <option value="BCA">BCA</option>
+                                <option value="BCS">BCS</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reviewYear">Year *</label>
+                            <select id="reviewYear" name="reviewYear" required>
+                                <option value="">Select year</option>
+                                <option value="1st Year">1st Year</option>
+                                <option value="2nd Year">2nd Year</option>
+                                <option value="3rd Year">3rd Year</option>
+                                <option value="Final Year">Final Year</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewRating">Rating *</label>
+                        <select id="reviewRating" name="reviewRating" required class="rating-select">
+                            <option value="">Select rating</option>
+                            <option value="5">⭐⭐⭐⭐⭐ Excellent (5 stars)</option>
+                            <option value="4">⭐⭐⭐⭐ Very Good (4 stars)</option>
+                            <option value="3">⭐⭐⭐ Good (3 stars)</option>
+                            <option value="2">⭐⭐ Fair (2 stars)</option>
+                            <option value="1">⭐ Poor (1 star)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reviewMessage">Your Review *</label>
+                        <textarea id="reviewMessage" name="reviewMessage" rows="6" required placeholder="Share your experience with Campus Project Hub. What did you like? How did we help you with your project?"></textarea>
+                        <small>Minimum 50 characters</small>
+                    </div>
+
+                    <div class="form-notice">
+                        <p>📝 <strong>Note:</strong> Your review will be published after verification to ensure authenticity. We typically review submissions within 24 hours.</p>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Review</button>
+                </form>
+
+                <div class="review-guidelines">
+                    <h3>Review Guidelines</h3>
+                    <ul>
+                        <li>✅ Be honest and specific about your experience</li>
+                        <li>✅ Mention what you liked or what could be improved</li>
+                        <li>✅ Keep it professional and respectful</li>
+                        <li>❌ Don't include personal contact information</li>
+                        <li>❌ Avoid offensive or inappropriate language</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Approved Reviews Section -->
+            <div class="approved-reviews-section">
+                <h2>Recent Reviews</h2>
+                <div id="approvedReviews" class="reviews-grid">
+                    <p style="text-align: center; color: #6b7280; padding: 2rem;">Loading reviews...</p>
+                </div>
+                <div class="view-all-reviews">
+                    <a href="reviews.html" class="secondary-button">View All Reviews</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Campus Project Hub. All rights reserved.</p>
+            <p>Maharashtra, India</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
