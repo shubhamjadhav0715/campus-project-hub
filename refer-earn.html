@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Refer & Earn - Campus Project Hub">
+    <title>Refer & Earn - Campus Project Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="refer-earn-styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Campus Project Hub 🤍</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+                <li><a href="submit-review.html">Submit Review</a></li>
+                <li><a href="refer-earn.html" class="active">Refer & Earn</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Refer & Earn Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Refer & Earn 💰</h1>
+            <p>Share with friends and earn rewards on every successful referral!</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="refer-section">
+        <div class="container">
+            <!-- Benefits Banner -->
+            <div class="benefits-banner">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>For You (Referrer)</h3>
+                    <p class="benefit-highlight">Choose Your Reward:</p>
+                    <ul>
+                        <li>✅ <strong>15% OFF</strong> on your next project</li>
+                        <li>✅ OR <strong>10% Cash</strong> (after payment received)</li>
+                    </ul>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎉</div>
+                    <h3>For Your Friend</h3>
+                    <p class="benefit-highlight">Instant Discount:</p>
+                    <ul>
+                        <li>✅ <strong>5% OFF</strong> on their first project</li>
+                        <li>✅ Same quality service</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- How It Works -->
+            <div class="how-it-works">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Get Your Code</h3>
+                        <p>Fill the form below to get your unique referral code (e.g., RAHUL2024)</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Share With Friends</h3>
+                        <p>Share your code with friends who need project help</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>They Get Discount</h3>
+                        <p>Your friend uses your code and gets 5% OFF on their project</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>You Earn Rewards</h3>
+                        <p>Choose 15% OFF on next project OR 10% cash reward!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Default Referral Code Banner -->
+            <div class="default-code-banner">
+                <h3>🌟 New to Campus Project Hub?</h3>
+                <p>Use our default referral code to get started:</p>
+                <div class="code-display">
+                    <span class="code-text">SHUBHAM</span>
+                    <button class="copy-btn" onclick="copyDefaultCode()">Copy Code</button>
+                </div>
+                <p class="code-note">Use this code when contacting us to get special benefits!</p>
+            </div>
+
+            <!-- Get Your Referral Code Form -->
+            <div class="referral-form-section">
+                <h2>Get Your Unique Referral Code</h2>
+                <p class="form-subtitle">Already our customer? Get your personalized referral code and start earning!</p>
+                
+                <form class="referral-form" id="referralCodeForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="refName">Your Full Name *</label>
+                            <input type="text" id="refName" name="refName" required placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="refEmail">Your Email *</label>
+                            <input type="email" id="refEmail" name="refEmail" required placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="refPhone">WhatsApp Number *</label>
+                            <input type="tel" id="refPhone" name="refPhone" required placeholder="Enter WhatsApp number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="refCourse">Course *</label>
+                            <select id="refCourse" name="refCourse" required>
+                                <option value="">Select your course</option>
+                                <option value="BCA">BCA</option>
+                                <option value="BCS">BCS</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="refReward">Preferred Reward Type *</label>
+                        <select id="refReward" name="refReward" required>
+                            <option value="">Select reward preference</option>
+                            <option value="15% Discount">15% OFF on next project</option>
+                            <option value="10% Cash">10% Cash (Bank Transfer/UPI)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" id="bankDetailsGroup" style="display: none;">
+                        <label for="refBankDetails">Bank/UPI Details (for cash reward)</label>
+                        <textarea id="refBankDetails" name="refBankDetails" rows="3" placeholder="Enter your UPI ID or Bank Account details"></textarea>
+                        <small>Required only if you choose cash reward option</small>
+                    </div>
+
+                    <div class="form-notice">
+                        <p>📝 <strong>Note:</strong> Your unique referral code will be generated and sent to your email and WhatsApp within 24 hours.</p>
+                    </div>
+
+                    <button type="submit" class="submit-button">Get My Referral Code</button>
+                </form>
+            </div>
+
+            <!-- Track Referral Form -->
+            <div class="track-referral-section">
+                <h2>Someone Used Your Code?</h2>
+                <p class="form-subtitle">Let us know when someone uses your referral code</p>
+                
+                <form class="referral-form" id="trackReferralForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="referrerName">Your Name *</label>
+                            <input type="text" id="referrerName" name="referrerName" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referralCode">Your Referral Code *</label>
+                            <input type="text" id="referralCode" name="referralCode" required placeholder="e.g., RAHUL2024" style="text-transform: uppercase;">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="referredName">Friend's Name *</label>
+                            <input type="text" id="referredName" name="referredName" required placeholder="Your friend's name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referredPhone">Friend's Phone Number *</label>
+                            <input type="tel" id="referredPhone" name="referredPhone" required placeholder="Friend's phone number">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="referredEmail">Friend's Email (Optional)</label>
+                        <input type="email" id="referredEmail" name="referredEmail" placeholder="Friend's email address">
+                    </div>
+
+                    <div class="form-notice">
+                        <p>📝 <strong>Note:</strong> We'll verify the referral and update your rewards once your friend completes their project.</p>
+                    </div>
+
+                    <button type="submit" class="submit-button">Submit Referral</button>
+                </form>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="terms-section">
+                <h3>Terms & Conditions</h3>
+                <ul class="terms-list">
+                    <li>✅ Referral code must be mentioned at the time of first contact</li>
+                    <li>✅ Referred person gets 5% discount on their first project</li>
+                    <li>✅ Referrer can choose between 15% discount on next project OR 10% cash reward</li>
+                    <li>✅ Cash rewards are processed after payment is received from referred person</li>
+                    <li>✅ Discount rewards are valid for 6 months from the date of successful referral</li>
+                    <li>✅ No minimum project value required</li>
+                    <li>✅ Referral codes are unique and non-transferable</li>
+                    <li>✅ Campus Project Hub reserves the right to modify or cancel the program at any time</li>
+                    <li>✅ Fraudulent referrals will result in disqualification</li>
+                </ul>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <h2>Start Earning Today!</h2>
+                <p>Get your referral code and share with friends to earn amazing rewards</p>
+                <a href="https://wa.me/917744040512?text=Hi!%20I%20want%20to%20join%20the%20Refer%20%26%20Earn%20program" target="_blank" class="cta-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" fill="currentColor"/>
+                    </svg>
+                    Contact on WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Campus Project Hub. All rights reserved.</p>
+            <p>Maharashtra, India</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Copy default code function
+        function copyDefaultCode() {
+            const code = 'SHUBHAM';
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.backgroundColor = '#10b981';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.backgroundColor = '';
+                }, 2000);
+            });
+        }
+
+        // Show/hide bank details based on reward selection
+        document.getElementById('refReward').addEventListener('change', function() {
+            const bankDetailsGroup = document.getElementById('bankDetailsGroup');
+            if (this.value === '10% Cash') {
+                bankDetailsGroup.style.display = 'block';
+            } else {
+                bankDetailsGroup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
